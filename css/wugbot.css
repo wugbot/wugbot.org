@@ -1,0 +1,76 @@
+.banner { 
+  background-color: rgb(245,245,220) !important;
+  padding: 1em !important;;
+  border-radius: .4em;
+}
+.engraved {
+  text-shadow: 2px -2px 1px #333 !important;
+}
+
+.hobbit { 
+  font-family:Hobbiton Brushhand !important;
+  color: black !important;
+  letter-spacing: 4px !important;
+  line-height: 1.25 !important;
+}
+
+.hobbit q { 
+  font-family: Georgia !important;
+}
+
+.hobbit q:before { 
+  content: '— ';
+}
+
+.ipa { 
+  font-family: "Gentium Plus"  !important;
+}
+
+.ipa, .morphology { 
+  word-spacing: .5em;
+}
+
+
+.ipa:before { content: ' [ '; }
+.ipa:after { content: ' ] '; }
+
+.wugbot_text {
+  color: green !important;
+  font-family: sans-serif !important;
+  padding: 1em !important; 
+}
+
+.walking_wugbot {
+  animation-duration: 15s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+img {
+  box-shadow: none !important;
+
+}
+
+
+#phonemizing .word p.ipa ,
+#phonemizing .word p.wugbot_text { 
+  margin:0;
+  line-height: 1;
+  word-spacing: 2px;
+}
+
+
+#phonemizing .word {
+  margin-bottom: 2em;
+}

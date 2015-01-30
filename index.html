@@ -1,0 +1,101 @@
+<!doctype html>
+<title>wugbot.org</title>
+<meta charset=utf-8>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { 
+  height: 100%;
+}
+
+body { 
+  display: flex;
+  flex-direction: row;
+}
+
+h1 { 
+  font-size: 10vh;
+  font-family: Impact;
+  font-weight: normal;
+  text-align:center;
+}
+
+main { 
+  flex: 7;
+  height: 100%;
+  display:flex;
+  font-size: 4vh;
+  font-family: sans-serif;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+figure { 
+  flex: 1;
+  display:flex;
+  flex-flow: column wrap;
+}
+
+nav {
+  flex: 3;
+  background: #39F;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav a  { 
+  font-family: sans-serif;
+  flex:1;
+  padding: 0 1em;
+  font-size: 3vh;
+  border-bottom: 1px solid rgba(75,173,255,.5);
+  text-align:right;
+  align-items: center;
+}
+
+nav a:hover { 
+  background: rgba(255,255,255,.1);
+  background: linear-gradient(to bottom, rgba(255,255,255,.1) 100%, transparent 80%); 
+  cursor: pointer;
+}
+
+nav a { 
+  text-decoration: none;
+  display:flex;
+  text-align:right;
+  align-items:center;
+}
+</style>
+
+
+<!-- book (any day now) -->
+<nav>
+  <a href=about>about wugbot</a>
+  <a href=learn>digital linguistics?</a>
+  <a href=datastructures> modeling documentary data</a>
+  <a href=markup>presenting documentary data</a>
+  <a href=javascript>interacting with documentary data</a>
+  <a href=revitalization>revitalization</a>
+  <a href=typology>typological database</a>
+  <a href=tools>    tools</a>
+  <a href=research>research</a>
+  <a href=app>app</a>
+</nav>
+
+<main>
+
+<figure>
+<img src=img/wug_wugbot.svg>
+<figcaption>
+Digital linguistics for everyone
+</figcaption>
+</figure>
+
+
+</main>
