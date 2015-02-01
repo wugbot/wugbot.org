@@ -1,4 +1,4 @@
-from twython import Twython
+from twython import Twython, TwythonError
 import time, sys
 
 APP_KEY = 'xxx'
