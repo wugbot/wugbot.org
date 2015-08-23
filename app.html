@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>App</title>	
+	<meta name=author content='The Wugbot Team'>
+	<meta name=description content='The Wugbot app for managing linguistic data'>
+	<meta name=keywords content='wugbot, digital linguistics, DLX, linguistics, computational linguistics, corpus linguistics language documentation, awesome'>
+
+  <link rel=stylesheet type=text/css href=css/fonts.css>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/dannyApp.css>
+  <link id=desktopCSS rel=stylesheet type=text/css href=css/desktop.css media='(min-width: 1000px)'>
+  <link id=mobileCSS rel=stylesheet type=text/css href=css/mobile.css media='(max-width: 1000px)'>
+</head>
+<body>
+  <header>
+    <div id=navbar>
+      <nav id=navIcons>
+        <img id=menuIcon src=img/menu.svg alt='open/close main navigation menu' class=icon>
+        <img id=boxIcon src=img/box.svg alt='open/close application menu' class=icon>
+      </nav>
+      <div id=navs>
+        <nav id=mainNav class='hideonDesktop hideonMobile'>
+          <ul>
+            <li><a href=index.html>Home</a></li>
+            <li><a href=aboutWugbot.html>About Wugbot</a></li>
+            <li><a href=aboutDLX.html>About Digital Linguistics</a></li>
+            <li><a href=app.html class=underline>App</a></li>
+          </ul>
+        </nav>
+        <nav id=appNav class=hideonMobile>
+          <ul>
+            <li><a>Documents</a></li>
+            <li><a>Lexicon</a></li>
+            <li><a>Media</a></li>
+            <li><a>Orthographies</a></li>
+            <li><a>Tags</a></li>
+            <li><a>Texts</a></li>
+          </ul>
+        </nav>
+      </div>
+      <select id=corpusSelector class=unicode></select>
+      <img id=userIcon src=img/user.svg alt='open user settings' class=icon>
+      <img id=settingsIcon src=img/settings.svg alt='open app settings' class=icon>
+  </header>
+  
+  <main>
+    <section id=overviewPane class='mainSection open'>
+      <nav id=sideNav class=hideonMobile>
+        <ul>
+          <li class=hideonMobile><a><img id=collapseLeft src=img/collapseLeft.svg alt='open/close the overview pane' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=documentsNav src=img/pages.svg alt='open the documents workview' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=lexiconNav src=img/bookSide.svg alt='open the lexicon workview' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=mediaNav src=img/headphones.svg alt='open the media workview' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=orthographiesNav src=img/letters.svg alt='open the orthographies workview' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=tagsNav src=img/tag.svg alt='open the tags workview' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=textsNav src=img/openBook.svg alt='open the texts workview' class=icon></a></li>
+        </ul>
+      </nav>
+      
+      <div id=documentsOverview class='overview module hideonDesktop hideonMobile'>
+        <h1>Documents</h1>
+        <p>This is a documents module. This module will display a list of documents associated with this corpus, such as scans of field notes or archival documents, copies of consent forms, etc. Clicking a document will display the document details in the details pane.</p>
+        <ul id=documentsList>Here is a <code>&lt;ul&gt;</code> with <code>id=documentsList</code> for displaying the list of documents associated with this corpus. It may be necssary to have multiple <code>&lt;ul&gt;</code>’s for different types of documents.</ul>
+      </div>
+      
+      <div id=lexiconOverview class='overview module hideonDesktop hideonMobile'>
+        <h1>Lexicon</h1>
+        <p>This is a lexicon module. This module will display the list of entries in the lexicon or lexica associated with this corpus, and can be filtered and sorted, etc. Clicking a lexical entry will display that entry in the details pane.</p>
+        <ul id=lexiconEntries>Here is a <code>&lt;ul&gt;</code> with <code>id=lexiconEntries</code> for displaying the list of lexical entries for this corpus.</ul>
+      </div>
+      
+      <div id=mediaOverview class='overview module hideonDesktop hideonMobile'>
+        <h1>Media</h1>
+        <button id=addMediaButton type=button value='Add media file'>Add media file</button>
+        <ul id=mediaList></ul>
+      </div>
+      
+      <div id=orthographiesOverview class='overview module hideonDesktop hideonMobile'>
+        <h1>Orthographies</h1>
+        <p>This is an orthographies module. This module will display the list of orthographies associated with this corpus. Clicking an orthography will display the orthography in the details pane for editing.</p>
+        <ul id=orthographiesList>Here is a <code>&lt;ul&gt;</code> with <code>id=orthographiesList</code> for displaying the list of orthographies associated with this corpus. It may be necessary to have multiple <code>&lt;ul&gt;</code>’s for different languages.</ul>
+      </div>
+      
+      <div id=tagsOverview class='overview module hideonDesktop hideonMobile'>
+        <h1>Tags</h1>
+        <ul id=tagsList></ul>
+      </div>
+      
+      <div id=textsOverview class='overview module hideonDesktop hideonMobile'>
+        <h1>Texts</h1>
+        <div>
+          <button id=addNewTextButton type=button value='Add new text'>Add new text</button>
+          <button id=importTextButton type=button value='Import text' class=hideonMobile>Import text</button>
+          <button id=addExistingTextButton type=button value='Add existing text'>Add existing text</button>
+          <button id=removeSelectedTextsButton type=button value='Remove selected texts'>Remove selected texts</button>
+        </div>
+        <ul id=textsList></ul>
+      </div>
+    </section>
+    
+    <section id=detailsPane class=mainSection>
+      <div id=tagger class='details module hideonDesktop hideonMobile'>
+        <h1>Tagger</h1>
+     
+        <form id=searchBar>
+          <label for=tagSearchBox>
+            <input id=tagSearchBox type=text class=unicode placeholder='Enter text or a regular expression to search'>
+          </label>
+          
+          <button id=tagSearchButton type=submit value=Search>Search</button>
+          
+          <div class='row wrap'>
+            <label for=allTagSearch>
+              <input id=allTagSearch type=radio name=field value=all checked>
+              <p>all</p>
+            </label>
+            
+            <label for=transcriptTagSearch>
+              <input id=transcriptTagSearch type=radio name=field value=transcripts>
+              <p>transcript</p>
+            </label>
+            
+            <label for=transcriptionTagSearch>
+              <input id=transcriptionTagSearch type=radio name=field value=transcriptions>
+              <p>transcriptions</p>
+            </label>
+
+            <label for=translationTagSearch>
+              <input id=translationTagSearch type=radio name=field value=translations>
+              <p>translations</p>
+            </label>
+            
+            <label for=notesTagSearch>
+              <input id=notesTagSearch type=radio name=field value=notes>
+              <p>notes</p>
+            </label>
+          </div>
+        </form>
+        
+        <div id=resultsBar>
+          <p id=resultsCounter></p>
+          <button id=taggerSelectAllButton type=button value='Select all results'>Select all results</button>
+          <button id=bulkTagButton type=button value='Add tag to selected'>Add tag to selected</button>
+          <button id=bulkUntagButton type=button value='Remove tag from selected'>Remove tag from selected</button>
+        </div>
+        
+        <ul id=taggingList></ul>
+      </div>
+      <div class=displayArea></div>
+    </section>
+      
+    <section id=toolbar class='mainSection open'>
+      <nav id=toolbarNav class=hideonMobile>
+        <ul>
+          <li><a><img id=collapseRight src=img/collapseRight.svg alt='open/close the toolbar pane' class=icon></a></li>
+          <li class='hideonDesktop hideonMobile'><a><img id=toolsNav src=img/tools.svg alt='open/close the toolbar pane' class=icon></a></li>
+        </ul>
+      </nav>
+      
+      <div id=toolbarContent>
+        <header>
+          <h1>Toolbar</h1>
+        </header>
+        
+        <form id=searchForm>
+          <div id=searchField>
+            <input id=searchBox type=text placeholder='Enter text or a regular expression to search' class=unicode>
+            <button id=searchButton type=submit value=Search>Search</button>
+          </div>
+          <fieldset>
+            <legend>Select a tier</legend>
+            <label for=transcriptOption>
+              <input id=transcriptOption type=radio name=selectTier value=transcripts>
+              <p>Transcript</p>
+            </label>
+            <label for=transcriptionOption>
+              <input id=transcriptionOption type=radio name=selectTier value=transcriptions checked>
+              <p>Transcription</p>
+            </label>
+            <label for=translationOption>
+              <input id=translationOption type=radio name=selectTier value=translations>
+              <p>Translation</p>
+            </label>
+            <label for=notesOption>
+              <input id=notesOption type=radio name=selectTier value=notes>
+              <p>Notes</p>
+            </label>
+          </fieldset>
+        </form>
+        
+        <ul id=results></ul>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div>
+      <p>&copy;2015 Wugbot</p>
+      <p>The code for this app is made available under <a href=http://mit-license.org/>an MIT license</a>.</p>
+    </div>
+    <label for=github>
+      <p><a href=https://github.com/wugbot/>View the code for this app on Github.</a></p>
+      <a href=https://github.com/wugbot/><img src=img/GitHub32px.png alt='GitHub octocat' height=32 width=32></a>
+    </label>
+  </footer>
+  
+  <ul id=menu></ul>
+  
+  <div id=popups>
+    <div id=blankPopup class='hideonDesktop hideonMobile'>
+      <img src=img/close.svg alt='close this popup' class='icon'>
+      <div class=displayArea></div>
+    </div>
+    
+    <div id=fileUploadPopup class='hideonDesktop hideonMobile'>
+      <img src=img/close.svg alt='close this popup' class='icon'>
+      <input id=fileUpload type=file>
+      <button id=fileUploadButton type=button value='Go'>Go</button>
+    </div>
+     
+    <div id=manageCorporaPopup class='hideonDesktop hideonMobile'>
+      <img src=img/close.svg alt='close this popup' class='icon'>
+      <h1>Create a new corpus</h1>
+      <form id=newCorpusForm>
+        <label for=corpusNameBox>
+          <p>Name for this corpus:</p>
+          <input id=corpusNameBox type=text class=unicode>
+        </label>
+        <button id=createCorpusButton type=submit value='Create corpus'>Create corpus</button>
+      </form>
+      
+      <h1>Edit an Existing Corpus</h1>
+      <ul id=corpusList></ul>
+    </div>
+    
+    <div id=settingsPopup class='hideonDesktop hideonMobile'>
+      <img src=img/close.svg alt='close this popup' class='icon'>
+      <h1>Settings</h1>
+      <button id=switchLayoutButton type=button value='Switch between mobile/desktop layout'>Switch between mobile/desktop layout.</button>
+    </div>
+    
+    <div id=tagPopup class='hideonDesktop hideonMobile'>
+      <img src=img/close.svg alt='close this popup' class='icon'>
+      <h1>Add a Tag</h1>
+      <form>
+        <label for=categoryInput>
+          <p>Category</p>
+          <input id=categoryInput type=text placeholder='Enter tag category'>
+        </label>
+        
+        <label for=valueInput>
+          <p>Value</p>
+          <input id=valueInput type=text placeholder='Enter tag value'>
+        </label>
+        
+        <button id=tagButton type=submit value='Add tag'>Add tag</button>
+      </form>
+    </div>
+  </div>
+  
+  <div id=templates>
+  
+    <template id=phraseTemplate>
+      <li class=phrase>
+        <input type=checkbox name=phraseCheckbox>
+        <img src=img/play.svg alt='play audio for this phrase' class='play icon'>
+        <label>
+          <div class=content></div>
+        </label>
+        <ul class=tags></ul>
+        <img src=img/tag.svg alt='tag this phrase' class='tag icon'>
+      </li>
+    </template>
+    
+    <template id=textTemplate>
+      <div class=text>
+        <div class=textButtons>
+          <button id=addMediaToTextButton type=button value='Add a media file to this text'>Add a media file to this text</button>
+          <button id=deleteTextButton type=button value='Delete this text'>Delete this text</button>
+        </div>
+        
+        <ul class=media></ul>
+        
+        <header>
+          <label for=abbrBox>
+            <p>Abbr</p>
+            <input id=abbrBox type=text>
+          </label>
+
+          <fieldset>
+            <legend>Title</legend>
+            <ul class=titles spellcheck=false></ul>
+          </fieldset>
+        </header>
+        
+        <ol class=phrases></ol>
+      </div>
+    </template>
+    
+  </div>
+  
+  <script src=js/site.js></script>
+  <script src=js/idb.js></script>
+  <script src=js/core.js></script>
+  <script src=js/models.js></script>
+  <script src=js/dannyViews.js></script>
+  <script src=js/dannyApp.js></script>
+  <script src=lib/mousetrap.js></script>
+  <script src=lib/mousetrap-global-bind.js></script>
+  <script src=tools/elan2json.js></script>
+</body>
+</html>

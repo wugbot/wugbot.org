@@ -1,0 +1,751 @@
+  {
+    "titles": {
+      "English": "History of Chalcatongo"
+    },
+
+    "dateRecorded": "1985",
+
+    "participants": [{
+      "name": "Crescenciano Ruiz Ramírez",
+      "role": "speaker"
+    }],
+
+    "phrases": [
+      {
+        "transcriptions": {
+          "ChalMacauley": "dices Chalcatongo ñũũ̀ ndéžá"
+        },
+        "translations": {
+          "English": "You say 'Chalcatongo' ñũũ̀ ndéžá [in Mixtec]."
+        },
+        "words": [
+          {
+            "token": {
+              "Spanish": "dices"
+            },
+            "morphemes": []
+          },
+          {
+            "token": {
+              "Spanish": "Chalcatongo"
+            },
+            "morphemes": []
+          },
+          {
+            "token": {
+              "ChalMacauley": "ñũũ̀"
+            },
+            "morphemes": [{
+              "token": {
+                "ChalMacauley": "ñũũ̀"
+              },
+              "glosses": {
+                "Leipzig": "town(?)"
+              }
+            }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "ndéžá"
+            },
+            "morphemes": [{
+              "token": {
+                "ChalMacauley": "ndéžá"
+              },
+              "glosses": {
+                "Leipzig": "Mixtec(?)"
+              }
+            }]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "nindùkoo xiĩ́ ñažĩũ̀ xíká"
+        },
+        "translations": {
+          "English": "It was founded by people who walked (here)."
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "nindùkoo"
+            },
+            "morphemes": [
+            {
+              "token": {
+                "ChalMacauley": "ni-"
+              },
+              "glosses": {
+                "Leipzig": "CP"
+              }
+            },
+            {
+              "token": {
+                "ChalMacauley": "ndùkoo"
+              },
+              "glosses": {
+                "Leipzig": "be.seated"
+              }
+            },
+            {
+              "token": {
+                "ChalMacauley": "=∅"
+              },
+              "glosses": {
+                "Leipzig": "3"
+              }
+            }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "xĩ́"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "xĩ́"
+                },
+                "glosses": {
+                  "Leipzig": "with"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "ñažĩũ̀"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "ñažĩũ̀"
+                },
+                "glosses": {
+                  "Leipzig": "people"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "xíká"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "xíká"
+                },
+                "glosses": {
+                  "Leipzig": "walk"
+                }
+              }]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "nisáʔa formár ñũũ̀"
+        },
+        "translations": {
+          "English": "They founded the town."
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "nisáʔa"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ni-"
+                },
+                "glosses": {
+                  "Leipzig": "CP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "sáʔa"
+                },
+                "glosses": {
+                  "Leipzig": "make"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "formár"
+            },
+            "glosses": {
+              "Spanish": "formar"
+            },
+            "morphemes": []
+          },
+          {
+            "token": {
+              "ChalMacauley": "ñũũ̀"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "ñũũ̀"
+                },
+                "glosses": {
+                  "Leipzig": "town"
+                }
+              }]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "nìkakii ñũũ̀ xíkáðe"
+        },
+        "translations": {
+          "English": "They came to the town walking."
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "nìkakii"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "nì-"
+                },
+                "glosses": {
+                  "Leipzig": "CP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ka-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "kii"
+                },
+                "glosses": {
+                  "Leipzig": "come.and.return"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "ñũũ̀"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "ñũũ̀"
+                },
+                "glosses": {
+                  "Leipzig": "town"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "xíkáðe"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "xíká"
+                },
+                "glosses": {
+                  "Leipzig": "walk"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=ðe"
+                },
+                "glosses": {
+                  "Leipzig": "3MN"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "kaxíká íčí"
+        },
+        "translations": {
+          "English": "They walked along the road,"
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "kaxíká"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ka-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "xíká"
+                },
+                "glosses": {
+                  "Leipzig": "walk"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "íčí"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "íčí"
+                },
+                "glosses": {
+                  "Leipzig": "road"
+                }
+              }]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "káxãʔã viaje"
+        },
+        "translations": {
+          "English": "they were on a journey."
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "káxãʔã"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ká-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "xãʔã"
+                },
+                "glosses": {
+                  "Leipzig": "go.and.return"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "viaje"
+            },
+            "glosses": {
+              "Spanish": "viaje"
+            },
+            "morphemes": []
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "te nikaxáʔa nuù xížaa beñṹʔṹ"
+        },
+        "translations": {
+          "English": "And they passed by where the church is (presently) located."
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "te"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "te"
+                },
+                "glosses": {
+                  "Leipzig": "and"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": " nikaxáʔa"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ni-"
+                },
+                "glosses": {
+                  "Leipzig": "CP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ka-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "xáʔa"
+                },
+                "glosses": {
+                  "Leipzig": "pass.by"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "nuù"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "nuù"
+                },
+                "glosses": {
+                  "Leipzig": "face"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "xížaa"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "xížaa"
+                },
+                "glosses": {
+                  "Leipzig": "be.located"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "beñṹʔṹ"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "beñṹʔṹ"
+                },
+                "glosses": {
+                  "Leipzig": "church"
+                }
+              }]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "wã́ã nikuu ɨ̃́ parájé nuù níkandùkoo xaníkandendàtu xínáʔa"
+        },
+        "translations": {
+          "English": "There was a spot in which they sat to rest."
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "wã́ã"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "wã́ã"
+                },
+                "glosses": {
+                  "Leipzig": "there"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "nikuu"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ni-"
+                },
+                "glosses": {
+                  "Leipzig": "CP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "kuu"
+                },
+                "glosses": {
+                  "Leipzig": "COP"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "ɨ̃́"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "ɨ̃́"
+                },
+                "glosses": {
+                  "Leipzig": "one"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "parájé"
+            },
+            "glosses": {
+              "Spanish": "parájé"
+            },
+            "morphemes": []
+          },
+          {
+            "token": {
+              "ChalMacauley": " nuù"
+            },
+            "morphemes": [{
+              "token": {
+                "ChalMacauley": "nuù"
+              },
+              "glosses": {
+                "Leipzig": "face"
+              }
+            }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "níkandùkoo"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ní-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ka-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ndùkoo"
+                },
+                "glosses": {
+                  "Leipzig": "be.seated"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "xaníkandendàtu"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "xa="
+                },
+                "glosses": {
+                  "Leipzig": "COMP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ní-"
+                },
+                "glosses": {
+                  "Leipzig": "CP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ka-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ndendàtu"
+                },
+                "glosses": {
+                  "Leipzig": "rest"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "xínáʔa"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "xínáʔa"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              }]
+          }
+        ]
+      },
+      {
+        "transcriptions": {
+          "ChalMacauley": "wã́ã nikažée stáa"
+        },
+        "translations": {
+          "English": "There they ate,"
+        },
+        "words": [
+          {
+            "token": {
+              "ChalMacauley": "wã́ã"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "wã́ã"
+                },
+                "glosses": {
+                  "Leipzig": "there"
+                }
+              }]
+          },
+          {
+            "token": {
+              "ChalMacauley": "nikažée"
+            },
+            "morphemes": [
+              {
+                "token": {
+                  "ChalMacauley": "ni-"
+                },
+                "glosses": {
+                  "Leipzig": "CP"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "ka-"
+                },
+                "glosses": {
+                  "Leipzig": "PL"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "žée"
+                },
+                "glosses": {
+                  "Leipzig": "eat"
+                }
+              },
+              {
+                "token": {
+                  "ChalMacauley": "=∅"
+                },
+                "glosses": {
+                  "Leipzig": "3"
+                }
+              }
+            ]
+          },
+          {
+            "token": {
+              "ChalMacauley": "stáa"
+            },
+            "morphemes": [{
+                "token": {
+                  "ChalMacauley": "stáa"
+                },
+                "glosses": {
+                  "Leipzig": "tortilla"
+                }
+              }]
+          }
+        ]
+      }
+    ]
+  }

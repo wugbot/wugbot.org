@@ -1,0 +1,75 @@
+/* Loads the fonts for the website */
+/* Currently-included fonts: DejaVu Sans Mono, Fira Sans, Gentium Plus */
+/*   - Not all Fira font variations are included - add them if you'd like to use them */
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  src: local('DejaVu Sans Mono Book'),
+    url('../fonts/DejaVu Sans Mono/DejaVuSansMono.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  src: local('DejaVu Sans Mono Bold'),
+    url('../fonts/DejaVu Sans Mono/DejaVuSansMono-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  src: local('DejaVu Sans Mono Oblique'),
+    url('../fonts/DejaVu Sans Mono/DejaVuSansMono-Oblique.woff') format('woff');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'DejaVu Sans Mono';
+  src: local('DejaVu Sans Mono Bold Oblique'),
+    url('../fonts/DejaVu Sans Mono/DejaVuSansMono-BoldOblique.woff') format('woff');
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('Fira Sans Light'),
+    url('../fonts/Fira Sans/FiraSans-Light.woff') format('woff');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('Fira Sans Light Italic'),
+    url('../fonts/Fira Sans/FiraSans-LightItalic.woff') format('woff');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: local('Fira Mono'),
+    url('../fonts/Fira Sans/FiraMono-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gentium Plus';
+  src: local('Gentium Plus Regular'),
+    url('../fonts/Gentium Plus/GentiumPlus-R.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gentium Plus';
+  src: local('Gentium Plus Italic'),
+    url('../fonts/Gentium Plus/GentiumPlus-I.woff') format('woff');
+  font-style: italic;
+  font-weight: normal;
+}

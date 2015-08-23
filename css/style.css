@@ -1,0 +1,250 @@
+/* General stylesheet for the site */
+/* CSS reset */
+/* General elements */
+html, body, div, span, applet, object, iframe,
+/* Headers */
+h1, h2, h3, h4, h5, h6,
+/* Text elements */
+p, blockquote, pre,
+/* Inline elements */
+a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+/* Styling elements */
+b, u, i,
+/* Lists */
+dl, dt, dd, ol, ul, li,
+/* Forms & Tables */
+button, caption, input, fieldset, form, label, legend, table, textarea, tbody, tfoot, thead, tr, th, td,
+/* Semantic elements */
+article, aside, audio, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, mark, menu, nav, option, output, ruby, section, select, summary, time, video {
+  border: none;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  height: auto;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  font-family: 'Fira Sans';
+  font-size: 100%;
+  font-weight: 300;
+  line-height: 150%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+a, abbr, acronym, b, bdo, br, big, cite, code, del, dfn, em, i, img, input, ins, kbd, map, object, p, q, samp, select, s, small, span, strike, strong, sub, sup, textarea, tt, var {
+  display: inline-block;
+}
+
+/* Styling by CSS rule(s) (alphabetical by CSS rule) */
+button, label, header {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+input[type=checkbox], input[type=radio], label p + input {
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+#navbar {
+  background-color: #3F93F9;
+}
+
+body, button {
+  background-color: white;
+}
+
+input[type=text] {
+  border: 1px solid #CCC;
+}
+
+button {
+  border: 1px solid black;
+}
+
+nav > ul > li > a, #navIcons {
+  border-bottom: 1px solid #3F93F9;
+}
+
+nav > ul > li a:hover, .underline {
+  border-bottom: 1px solid white;
+}
+
+input[type=text]:focus {
+  border-color: black;
+}
+
+button, input[type=text] {
+  border-radius: 10px;
+}
+
+input[type=text]:focus {
+  box-shadow: 0px 0px 3px 0px #CCC;
+}
+
+button:hover {
+  box-shadow: 0px 0px 3px 0px gray;
+}
+
+button:active {
+  box-shadow: 0px 0px 3px 0px black inset;
+}
+
+a, a:hover, a:visited, a:active {
+  color: #3F93F9;
+}
+
+#navbar, nav a, nav a:hover, nav a:visited, nav a:active {
+  color: white;
+}
+
+button, .icon, #navbar nav li {
+  cursor: pointer;
+}
+
+input[type=date], label, #navIcons {
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+main, #navs {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
+h1, h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 125%;
+}
+
+legend, strong {
+  font-weight: 400;
+}
+
+button, input[type=text] {
+  height: 2.5rem;
+}
+
+label[type=checkbox], input[type=radio], label p + input {
+  margin: 0 0.25rem;
+}
+
+button {
+  margin: 0.25rem;
+}
+
+footer div, input[type=text] {
+  padding: 0 0.5rem;
+}
+
+button, nav > ul > li {
+  padding: 0.5rem;
+}
+
+ul.bulletedList li {
+  padding: 0.25rem 0;
+}
+
+.mainSection {
+  padding: 1rem;
+}
+
+h1, h2, main > p+p {
+  padding-top: 0.5rem;
+}
+
+h1, th {
+  text-align: center;
+}
+
+#navbar {
+  width: 100%;
+}
+
+/* Styling by classes or element type (alphabetical by class/element) */
+a, a:hover, a:visited, a:active {
+  background: transparent;
+  text-decoration: none;
+}
+
+audio {
+  height: 30px;
+  max-width: 100%;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+code {
+  font-family: 'DejaVu Sans Mono';
+  white-space: pre;
+}
+
+table {
+  border-spacing: 0;
+  display: table;
+}
+	
+tbody {
+  display: table-row-group;
+}
+
+td, th {
+  display: table-cell;
+  vertical-align: middle;
+}
+	
+thead {
+  display: table-header-group;
+}
+
+tr {
+  display: table-row;
+}
+
+.unicode {
+  font-family: 'Gentium Plus';
+  font-size: 120%;
+}
+
+ul.bulletedList {
+  list-style: disc outside none;
+}
+
+ul.bulletedList li {
+  display: list-item;
+}
+
+/* Styling by DOM elements (organized by DOM structure) */
+body {
+  min-height: 100vh;
+}
+
+nav > ul {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+footer {
+  font-size: 80%;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+footer img {
+  margin: 0 0.5rem;
+}

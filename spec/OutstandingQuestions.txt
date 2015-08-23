@@ -1,0 +1,29 @@
+Oustanding Questions
+
+1. Should items in the "morphemes" array be unique? Currently set to FALSE.
+
+2. Should linguistic objects be extensible (i.e. do we allow custom fields)? The "additionalProperties" setting for each linguistic object is currently set to TRUE (i.e. if an object has additional properties other than the ones defined in the spec, it will still pass the spec).
+
+3. Should breadcrumbs be included in the spec? They are NOT currently included in the spec. The implication of this is that breadcrumbs are an application-specific implementation detail.
+
+4. Will users be able to add notes at any level? Currently there ARE notes at each level.
+
+5. Do we allow empty arrays (e.g. "morphemes", "words")? Currently arrays MAY be empty. The implication of this is that a text with only phrase-level transcriptions will be valid DLX format.
+
+6. Do we provide multiple Notes fields, for each orthography? Currently there is only ONE Note field per linguistic object. The implication of this is that all the notes for an object will go into a single field, regardless of language.
+
+7. Should the "speaker" property of the Phrase be required? The speaker field currently IS required. The implication is that the user will have to fill in a speaker, even when they don't know who the speaker is.
+
+8. How should media files be associated with a text? Currently, the text has a "mediaFiles" array, consisting of MediaFile objects that have two properties: "type" and "url". The "type" field is a valid internet media type ("MIME type").
+
+9. How do we align media to texts? Currently there's both a "startTime" and "endTime" property on the Media File object, which allows the user to specify an arbitrary time according to which phrase timestamps can be aligned. To change the offset of different Media Files, the "startTime" can simply be changed.
+
+10. Should startTime and endTime be stored as strings? They currently are, with a regexp checking their format to be seconds.milliseconds. Same for the "length" field.
+
+11. Should we extend JSON Schema to add an example field for our purposes? Currently the schema is NOT extended, and examples are NOT included. (If examples are included, they'll probably need to include escapes for quotes and backslashes.)
+
+12. Should we include a dataType field for the purposes of hydration? Currently the spec does NOT include a dataType field, the implication being that this is instead an application-level detail.
+
+13. Should we include the ID field? Currently the spec does NOT include an ID field, the implication being that this is an application-specific detail. It also means that texts passed from one application to another, and then back, may not be recognizable as an instance of the same text, resulting in duplicates. This seems like an edge case though.
+
+14. Do we include leading/trailing tokens in the token string? In the gloss string?

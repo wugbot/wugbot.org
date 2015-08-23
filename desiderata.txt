@@ -1,0 +1,48 @@
+Desiderata:
+- display the total time of the text, and associated media
+- when you click one tag, it delimits the list of tags to ones that co-occur
+  - you can click a button to reset the tags, kinda like searching by department on Amazon
+- render tags list with full abbreviation (currently doesn't have it)
+- render text phrases without full abbreviation (current shows it)
+- Somehow the notes in Helen's text got stored one letter to a text item - needs fixing!
+- text updating is broken for the phrase - error happened when you tried editing the notes field on Helen's first text
+- figure out why you've got an undefined start time in your Ekegusii stories
+- also why your phonemic transcriptions aren't present in Helen's story
+- ability to add/delete phrases to a text, and move them around (and change their time alignment without a waveform)
+- close/open pane button isn't switch images (for the overview pane)
+- Open overview pane when you switch to a different view
+- Stop audio from double-playing in tagging view
+- Custom fields (e.g. minPitch, maxPitch)
+- Delete tags from a phrase on an individual level
+- Ability to rename tags (combine add and delete process)
+- Clicking any part of the phrase makes it selected
+- Pressing tab when the tag popup is open shouldn't start playing the selected phrase
+- Importing a text doesn't immediately add it to the corpus and rerender the texts list, but it should
+- Ability to search within results
+- Redisplay tagger after bulk tag
+- Count of the number of items with each tag (overview view)
+- Name of Add tag button in popup needs to change depending on whether you're adding or removing tags
+- Tags overview list still isn't sorting correctly (you should just filter the tags into new arrays, and display only those arrays) in order
+- Clicking on tag category renders all tags with that category (not just exact matches)
+- Character palette
+- Notes field on the tag
+- Color field on tag
+- Clicking the manage corpora box, then clicking outside of it, seems to reset the workview - stop this behavior
+- Hide the results counter when the tagger module is hidden (it displays the last result when the user comes back to it)
+- Ability to search for things that *don't* have a particular tag
+- Pressing escape when a popup is open should close it
+- Order the phrase-level tags alphabetically as well
+- Ability to deselect all results
+- Create .tagUp() and .tagDown() functions, to apply a tag at one level to every object at the level immediately above/below it
+  - Maybe also a .moveTagDown() function, which moves a tag down a level to a specific, provided child
+  - Also a .moveTagUp(), which moves a tag to its parent
+- User icon should toggle the user popup, not just display it
+- Add .selected highlighting to tags when clicked, and when ctrl+clicked (this probably means that the tagsOverview module shouldn't rerender for a new search - only when the corpus tag data changes)
+- stick results / search bar at top
+- a stats module
+- the User popup should close when the user clicks the user icon a second time
+- Ability to quickly go to a point in a text by breadcrumb
+- Mark whether an example of something has been used in grammatical descriptions yet
+- Click a tag or search result to see it in context, in the text
+- List the text abbreviation in the search results (will need to get a textAbbrevs list to reference for each search result)
+

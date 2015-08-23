@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <meta name=author content='The Wugbot Team'>
+  <meta name=description content='A demo of the digital representation of linguistic structure'>
+  <meta name=keywords content='linguistics, data modeling, digital linguistics, wugbot, interlinear gloss'>
+  <title>Visualizing Linguistic Data Structures</title>
+  
+  <script type="text/javascript" src="js/intro.js-1.0.0/intro.js"></script>
+  <link href="css/introdemo.css" rel="stylesheet">
+  
+  <link rel=stylesheet type='text/css' href='css/demo.css'>
+  
+</head>
+
+<body>
+  <header>
+    <h1>Digitally Representing Linguistic Structures</h1>
+  </header>
+  
+  <section id=demo>
+    <section id=data>
+      <section id=inputArea>
+        <label id=transcriptionLabel for=transcriptionBox>
+          <p>Phrase</p>
+          <input id=transcriptionBox type=text class=unicode>
+        </label>
+        
+        <ol class=words></ol>
+     
+        <label id=translationLabel for=translationBox>
+          <p>Translation</p>
+          <input id=translationBox type=text class=unicode>
+        </label>
+      </section>
+      
+      <button id=downloadButton>Download your data!</button>
+      
+      <pre id=jsonArea></pre>
+    </section>
+  
+    <section id=visualizations>
+      <div id=interlinearGloss class=visualization>
+        <h2>Interlinear Gloss</h2>
+        <div class=phrase>
+          <p class='transcription unicode'></p>
+          <ol class=words></ol>
+          <p class='translation unicode'></p>
+        </div>
+      </div>
+      
+      <div class=visualization id=stats>
+        <h2>Phoneme Count</h2>
+        <div id=chart></div>
+      </div>
+
+      <div class=visualization id=dictionary>
+        <h2>Dictionary</h2>
+        <ol id=entries></ol>
+      </div>
+      
+      <p>
+        <a href=index.html>
+          <button id=homepageButton>Go back to the homepage!</button>
+        </a>
+      </p>
+      <p>
+        <button id=demoRestartButton>Restart the demo</button>
+      </p>
+    </section>
+  </section>
+  
+  <!-- This template is not the full word template from the spec. This one is designed for pedagogical purposes instead. -->
+  <template id=wordInputTemplate>
+    <li class=word>
+      <p class='wordToken unicode'></p>
+      <p class='wordGloss unicode' contenteditable spellcheck=false>gloss</p>
+      <select class=wordPOS>
+        <option value=select>p.o.s.</option>
+        <option value=noun>n.</option>
+        <option value=verb>v.</option>
+        <option value=adjective>adj.</option>
+        <option value=other>other</option>
+      </select>
+    </li>
+  </template>
+  
+  <template id=wordTemplate>
+    <li class=word>
+      <p class='wordToken unicode'></p>
+      <p class='wordGloss unicode'></p>
+      <p class='wordPOS'></p>
+    </li>
+  </template>
+  
+  <template id=entry>
+    <li class=entry>
+      <p class=headword></p>
+      <p class=wordPOS></p>
+      <p class=definition></p>
+    </li>
+  </template>
+
+  <script src='js/steps.js'></script>
+  <script src='js/demo.js'></script>
+</body>
+</html>

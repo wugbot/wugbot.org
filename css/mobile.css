@@ -1,0 +1,93 @@
+/* Mobile styling for Danny's app */
+/* Mobile-only CSS, for both the entire site and the app specifically */
+/* Anything with a class of .hideonMobile will not display unless this class is removed */
+
+/* Styling by CSS rule (alphabetical by CSS rule) */
+nav {
+  -webkit-align-items: flex-start;
+  align-items: flex-start; }
+
+#navbar {
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+
+ul.bulletedList li {
+  margin-left: 2.5rem; }
+
+footer label {
+  margin-top: 0.5rem; }
+
+footer div p {
+  text-align: center; }
+
+#banner, #corpusSelector, .mainSection, #navs {
+  width: 100%; }
+
+/* Styling by class or element (alphabetical by class/element) */
+body {
+  font-size: 2.5rem; }
+
+.hideonMobile {
+  display: none; }
+
+.icon {
+  height: 10rem; }
+
+#popups > div {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  position: relative; }
+
+/* Styling by DOM structure (organized by DOM structure) */
+body > header {
+  -webkit-order: 1;
+  order: 1; }
+
+body main {
+  -webkit-order: 3;
+  order: 3; }
+
+body footer {
+  -webkit-order: 4;
+  order: 4; }
+
+body #popups {
+  -webkit-order: 2;
+  order: 2; }
+
+#navbar {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+#navbar #navIcons {
+  -webkit-order: 1;
+  order: 1; }
+
+#navbar #navs {
+  font-size: 150%;
+  -webkit-order: 4;
+  order: 4; }
+
+#navbar #corpusSelector {
+  font-size: 150%;
+  margin: 0.75rem;
+  -webkit-order: 3;
+  order: 3; }
+
+#navbar #settingsIcon {
+  -webkit-order: 2;
+  order: 2; }
+
+main #toolbar {
+  -webkit-order: 1;
+  order: 1; }
+
+main #overviewPane {
+  -webkit-order: 2;
+  order: 2; }
+
+main #detailsPane {
+  -webkit-order: 3;
+  order: 3; }

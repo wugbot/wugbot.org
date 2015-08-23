@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>App</title>	
+	<meta name=author content='The Wugbot Team'>
+	<meta name=description content='The Wugbot app for managing linguistic data'>
+	<meta name=keywords content='wugbot, digital linguistics, DLX, linguistics, computational linguistics, corpus linguistics language documentation, awesome'>
+
+  <link rel=stylesheet type=text/css href=css/fonts.css>
+
+<style>/* will move this to an independent file later */
+
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+html { 
+  display:flex;
+  flex-direction: column;
+}
+
+body {
+  display:flex;
+  flex-grow:1;
+  flex-direction:column;
+  min-height: 100vh;
+}
+
+main { 
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  flex-grow:1;
+  align-items:center;
+}
+
+main section { 
+  align-items: center;
+  flex: 1;
+  width: 60%;
+  display:flex;
+  flex-direction: column;
+}
+
+main section#crib {
+  min-height:100%;
+  flex-grow:1;
+  background:steelblue;
+  width: 30%;
+}
+
+main section#editor {
+  flex:4;
+}
+
+main section#editor input {
+  margin: 1em;
+  width:80%;
+}
+
+main section#output {
+  flex:5;
+}
+
+main section#output textarea {
+  height: 80%;
+  width: 80%;
+}
+
+footer { 
+  border-top: 1px solid black;
+  height:1em;
+}
+
+</style>
+</head>
+<body>
+  <header>
+  </header>
+  
+  <main>
+   
+    <section id=crib>
+
+<ul>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+</ul>
+    </section>
+
+    <section id=editor>
+      <input placeholder=transcription lang=vmc class=transcription>
+      <input placeholder=translation  lang=en class=free>
+    </section>
+
+    <section id=output>
+      <nav></nav>
+      <textarea></textarea>
+    </section>
+  </main>
+  
+  <footer>
+    <div>
+      <p>&copy;2015 Wugbot - The code for this app is made available under <a href=http://mit-license.org/>an MIT license</a>.  <a href=https://github.com/wugbot/>View the code for this app on Github.</a></p>
+    </div>
+  </footer>
+  
+  <script src=js/idb.js></script>
+  <script src=js/core.js></script>
+  <script src=js/models.js></script>
+  <script src=js/views.js></script>
+
+<script>
+// renders a string for cutting and pasting into papers
+var PasteablePhraseView = function(options){
+  View.call(this,options);
+
+  var 
+    el = this.el = options.el,
+    textarea = el.querySelector('textarea'),
+    model = this.model = options.model;
+
+  this.render = function(){
+    textarea.value = '';
+    textarea.value += model.transcription + '\n' + model.translation;
+  }.bind(this)
+}
+
+var PhraseEditorView = function(options){
+  View.call(this, options);
+
+  var 
+    el = this.el = options.el, 
+    model = this.model = phrase = options.model, 
+    transcriptionInput = this.el.querySelector('input.transcription'),
+    translationInput = this.el.querySelector('input.free');
+
+  transcriptionInput.addEventListener('keyup', function(ev){
+    if(ev.which = 13){
+      ev.preventDefault();
+      phrase.transcription = transcriptionInput.value.trim();
+      this.model.notify('updateModel', phrase.transcription);
+    }
+  }.bind(this))
+
+  translationInput.addEventListener('keyup', function(ev){
+    if(ev.which = 13){
+      ev.preventDefault();
+      phrase.translation = translationInput.value.trim();
+      this.model.notify('updateModel', phrase.translation);
+    }
+  }.bind(this))
+  
+}
+
+</script>
+
+<script>
+
+var phrase = new models.Phrase();
+
+var phraseEditor = new PhraseEditorView({
+  el: document.querySelector('#editor'),
+  model: phrase,
+});
+
+
+var pasteable = new PasteablePhraseView({
+  el: document.querySelector('#output'),
+  model: phrase, 
+  update: function(action, data){
+    this.render()
+  }
+});
+
+phrase.observers.add(pasteable,'updateModel');
+
+</script>
+
+</body>
+</html>

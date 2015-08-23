@@ -1,0 +1,203 @@
+/* Styling for Danny's app */
+
+/* Styling by CSS rule(s) (alphabetical by CSS rule) */
+.tags {
+  -webkit-align-content: flex-start;
+  align-content: flex-start; }
+
+.media, #mediaList li, #resultsBar, #searchBar, #searchField, .titles li {
+  -webkit-align-items: center;
+  align-items: center; }
+
+.tags, .text header, #tagsList > li > ul {
+  -webkit-align-items: flex-start;
+  align-items: flex-start; }
+
+audio, .phrase .icon, #taggingList .icon, .textsListItem abbr {
+  -webkit-align-self: center;
+  align-self: center; }
+
+#bulkTagButton {
+  -webkit-align-self: flex-end;
+  align-self: flex-end; }
+
+.tagGroup {
+  background-color: rgba(63, 249, 165, 0.25); }
+
+.tagLabel, .tagValue {
+  background-color: rgba(63, 249, 165, 0.5); }
+
+#menu > li:hover, .phrase {
+  background-color: rgba(63, 147, 249, 0.25); }
+
+.phrase > .wrapper > p {
+  background-color: transparent; }
+
+.text .phrase > .wrapper > p:hover {
+  background-color: rgba(63, 147, 249, 0.5); }
+
+.phrase > .wrapper > p:focus {
+  background-color: rgba(63, 147, 249, 0.5); }
+
+footer, #menu, section {
+  border: 1px solid lightgray; }
+
+#sideNav a, #toolbarNav a {
+  border: none; }
+
+.phrase > .wrapper > p, .tagLabel, .tagValue {
+  border-radius: 5px; }
+
+#menu, .phrase, .tagGroup {
+  border-radius: 10px; }
+
+.phrase.selected {
+  box-shadow: 0px 0px 5px 0px #3F93F9; }
+
+.icon, #mediaList li, .tagCategory, #menu > li, .tagValue, .textsListItem {
+  cursor: pointer; }
+
+.media li,
+#mediaList li,
+.phrase,
+#resultsBar,
+.row,
+#searchBar,
+#searchField,
+#taggingList > li,
+.tags,
+#tagsList > li > ul,
+.textButtons,
+.textsListItem,
+.titles li {
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+
+#mediaList li p,
+.phrase label,
+#resultsCounter,
+#searchBar > label,
+#searchBox,
+#taggingList .tags,
+#tagSearchBox,
+.titles label,
+.wrapper {
+  -webkit-flex-grow: 1;
+  flex-grow: 1; }
+
+.tags, #tagsList > li > ul, .textButtons, .wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+#menu, .title {
+  font-size: 150%; }
+
+legend {
+  font-weight: bold; }
+
+#resultsBar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+
+.tagGroup, #tagPopup label, #taggingList input[type=checkbox], .textsListItem input {
+  margin: 0.5rem; }
+
+.tagValue, .tagLabel {
+  margin: 0.25rem; }
+
+.phrases > li, #taggingList > li {
+  margin-top: 1rem; }
+
+.tags {
+  min-width: 25%; }
+
+#corpusSelector, #taggingList .tags, #searchBar > div > label, .textsListItem p {
+  padding: 0 0.5rem; }
+
+#menu > li, .phrase > .wrapper > p, .tagLabel, .tagValue {
+  padding: 0.25rem 0.5rem; }
+
+.tagGroup, .textsListItem {
+  padding: 0.5rem; }
+
+.phrase, #popups > div {
+  padding: 1rem; }
+
+#menu, #sideNav, img[src='img/close.svg'], #toolbarNav {
+  position: absolute; }
+
+#sideNav, #toolbarNav {
+  top: 0; }
+
+.phrase label, .text fieldset, .text header input, .text header label {
+  width: 100%; }
+
+/* Styling by classes or element type (alphabetical by class/element) */
+.closed {
+  max-width: 2.5rem; }
+
+.icon[src='img/tag.svg'], .icon[src='img/play.svg'] {
+  min-height: 2.5rem;
+  min-width: 2.5rem; }
+
+img[src='img/close.svg'] {
+  top: 0.5rem;
+  right: 0.5rem;
+  transform: translate(25%, -25%); }
+
+input[type=checkbox] {
+  min-height: 1rem;
+  min-width: 1rem; }
+
+.mainSection {
+  position: relative;
+  transition: max-width 1s;
+  width: 33%; }
+
+.mainSection.closed .module {
+  display: none; }
+
+#mediaList li img {
+  height: 2rem; }
+
+#menu {
+  background-color: white; }
+  
+.open {
+  max-width: 100%; }
+
+.phrase icon {
+  max-width: 45px;
+  min-width: 45px; }
+
+#sideNav li, #toolbarNav li {
+  padding: 0; }
+
+#tagPopup p {
+  width: 30%; }
+
+#tagPopup input {
+  margin: 0; }
+
+#toolbar.closed #toolbarContent {
+  display: none; }
+  
+/* Styling by DOM elements (organized by DOM structure) */
+#corpusSelector {
+  background-color: #3F93F9;
+  border: 1px solid white;
+  color: white;
+  text-align: center; }
+
+#corpusSelector:hover {
+  box-shadow: 0 0 5px 0 white; }
+
+.textButtons {
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+#sideNav {
+  left: 0; }
+
+#toolbarNav {
+  right: 0; }

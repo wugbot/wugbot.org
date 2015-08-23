@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title><!-- Title --></title>	
+	<meta name=author content='Daniel W. Hieber'>
+	<meta name=description content="[description]">
+	<meta name=keywords content='[keywords]'>
+  
+  <link rel=stylesheet href=style.css></link>
+</head>
+<body>
+  <button id=convertButton>Convert</button>
+  <textarea id=input></textarea>
+  <pre id=output></pre>
+
+  <script>
+function convert() {
+  var input = document.querySelector('#input');
+  var output = document.querySelector('#output');
+  var phrases = input.value.split(/\n\n/g);
+  phrases = phrases.map(function(phrase) {
+    return {
+      transcription: phrase.split(/\n/g)[0],
+      translation: phrase.split(/\n/g)[1],
+      notes: phrase.split(/\n/g)[2]
+    };
+  });
+  output.textContent = JSON.stringify(phrases, null, 2);
+};
+
+document.querySelector('#convertButton').addEventListener('click', convert);
+  </script>
+</body>
+</html>

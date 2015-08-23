@@ -1,0 +1,39 @@
+/* Desktop styling for Pat's app */
+/* Desktop-only CSS, for both the entire site and the app specifically */
+/* Anything with a class of .hideonDesktop will not display unless this class is removed */
+
+/* Styling by CSS rule (alphabetical by CSS rule) */
+#navbar {
+  -webkit-align-items: center;
+  align-items: center; }
+
+footer, footer label, nav > ul, main, #navbar {
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+
+section {
+  -webkit-flex-grow: 1;
+  flex-grow: 1; }
+
+ul.bulletedList li {
+  margin-left: 1.5rem; }
+
+/* Styling by class or element type (alphabetical by class/element) */
+.hideonDesktop {
+  display: none; }
+  
+.icon {
+  height: 2.5rem; }
+
+#popups > div {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px 0px gray;
+  left: 50%;
+  position: fixed;
+  top: 20%;
+  transform: translateX(-50%); }
+
+/* Styling by DOM (organized by DOM structure) */
+#banner {
+  max-width: 300px; }

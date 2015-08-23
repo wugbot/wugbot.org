@@ -1,0 +1,430 @@
+<!doctype html>
+<title>Digital Linguistics Data Specification</title>
+<meta charset=utf-8>
+<link rel=stylesheet href=spec.css>
+
+<header>
+  <h1>Digital Linguistics Data Specification</h1>
+  <h2 id=version>Version ɑ.6 (<time datetime="2015-06-18">June 18, 2015</time>)</h2>
+</header>
+
+<main>
+
+<aside>
+<header><h1>Outline</h1></header>
+<ol id=toc></ol>
+</aside>
+
+<section id=spec>
+  <section id=intro>
+    <header>
+      <h1>Introduction</h1>
+    </header>
+
+    <p>To Do:</p>
+
+    <ul>
+      <li>Make descriptions consistent in format (e.g. all complete sentences).</li>
+      <li>Use the <code>dfn</code> tag rather than the <code>code</code> tag for the first mention of the term in the description.</li>
+      <li>Use the term in the first sentenced of the description, e.g. "A 'text' is..."</li>
+      <li>Use the <code>code</code> tag only when referring to actual code/markup, or when talking about the JSON object (rather than the linguistic object).</li>
+      <li>Consistent capitalization on 'optional' and 'required'.</li>
+      <li>Check for curly quotes where appropriate.</li>
+    </ul>
+
+    <p>This document lays out a standard format for exchanging linguistic data in digital form, called <abbr title="Digital Linguistics JSON">dlxJSON</abbr> format (short for Digital Linguistics JavaScript Object Notation). The format is designed to capture hierarchical linguistic data in a way that aligns with the descriptive categories that linguists use, relying on fundamental linguistic notions such as <dfn>text</dfn>, <dfn>morpheme</dfn>, <dfn>orthography</dfn>, etc. For instance, it is capable of capturing the fact that a text contains sentences, sentences contain words, words contains morphemes, and morphemes contain phonemes. This turns out to be a crucial factor in inputting, editing, searching, and analyzing linguistic data. For a more detailed discussion of the advantages of this format in doing Digital Linguistics, see <cite>Hieber & Hall</cite> (forthcoming).</p>
+
+    <p>There are many ways that someone could digitally represent linguistic data. For example, one could represent the ‘language’ field as <code>"lang"</code> or <code>"language"</code>. While either is equally appropriate, portability demands that linguists standardize on a single format. (Note that the current document is a working version, and so many parts of this specification are still subject to change.) The current specification provides a standard for how linguists can represent their data using <abbr title="JavaScript Object Notation">JSON</abbr>, i.e. <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation. JSON is the data interchange format for the web, supported by all major programming languages, and is both easy for humans to read and write and machines to parse and generate. This specification is designed to be application-independent, and compatible with modern web technologies. For more information on JSON, visit <a href="http://json.org/">JSON.org</a>.</p>
+
+    <p>A few things to keep in mind:</p>
+
+    <ul>
+      <li>JSON has two types of structures: objects and collections/arrays.</li>
+      <li>An object is represented with curly brackets <code>{ }</code>, and contains a list of fields (attributes, properties) and their values, separated by a colon, like so: <code>"title" : "Bear and Rabbit"</code>.</li>
+      <li>A collection, like the name implies, is simply a collection of objects, contained within square brackets <code>[ ]</code>, and separated by commas, like so: <code>"phonemes" : ["c", "č", "cʼ", "čʼ", …]</code>.</li>
+      <li>The fields/attributes in an object can be in any order. The <code>id</code> field of the text does not always have to preced the <code>title</code> field, for example.</li>
+      <li>To make this specification more visually understandable, occasionally a JSON object will appear without any of its properties, and simply be given a label instead, e.g. <code>{ phrase 1 }</code>.</li>
+    </ul>
+  </section><!-- intro -->
+
+  <section id=text>
+    <header>
+      <h1 class=object id="text">Text</h1>
+    </header>
+    <p><strong class=required>required</strong>
+     The <code>text</code> is the fundamental unit of documentation. It represents a linguistic performance of a stretch of discourse in context.
+     This may include a wide variety of linguistic genres: an elicitation session, a conversation, a narrative, a song, etc.
+    </p>
+    <pre><code>
+{
+  "dataType" : "text",
+  "id" : "346",
+  "title" : "Bear and Rabbit",
+  "abbreviation" : "A25",
+  "discourseType" : "monologue",
+  "genre" : "folktale",
+  "participants" : [ { participant 1 }, { participant 2 }, … ],
+  "orthographies" : [ { orthography 1 }, { orthography 2 }, … ],
+  "phrases" : [ { phrase 1 }, { phrase 2 }, … ]
+}
+    </code></pre>
+
+    <section id=dataType>
+      <header>
+        <h1 class="string">Data Type</h1>
+        <code>"dataType"</code>
+      </header>
+      <p><strong class=required>required</strong> The type of linguistic data this object refers to, e.g. <code>"text"</code>, <code>"phrase"</code>, <code>"orthography"</code>, <code>"morpheme"</code>, etc. This property is used in Javascript to determine the type of data being processed, and therefore is required. For a text, the data type must be <code>"text"</code>.</p>
+      <pre><code>
+"dataType" : "text"
+      </code></pre>
+    </section><!-- dataType -->
+
+    <section id=id>
+      <header>
+        <h1 class="string">Text Identifier (ID)</h1>
+        <code>"id"</code>
+      </header>
+      <p><strong class=optional>optional</strong> A unique identifier for the text, (e.g. <a title="Globally unique identifier - Wikipedia, the free encyclopedia" href="https://en.wikipedia.org/wiki/Globally_unique_identifier">globally unique identifier</a>, an integer, etc.).</p>
+      <pre><code>
+"id" : 25
+      </code></pre>
+    </section><!-- id -->
+
+    <section id=titles>
+      <header>
+        <h1 class="object">Titles</h1>
+        <code>"titles"</code>
+      </header>
+      <p><strong class=required>Required</strong> A <code>title</code> is a human-readable prose description of the content of the text. The <code>title</code> may be in multiple languages and/or orthographies, which are attributes of the <code>titles</code> object.</p>
+      <pre><code>
+"titles" : {
+  "Eng" : "Bear & Rabbit",
+  "ModPractical" : "Qakun Puup ne"
+}
+      </code></pre>
+
+      <section id=title>
+        <header>
+          <h1 class="string">Title</h1>
+          <code>"[name of orthography]"</code>
+        </header>
+        <p><strong class=required>Required</strong> A human-readable prose description of the content of the text, in a specified orthography.</p>
+        <pre><code>
+"Eng" : "Bear and Rabbit"
+        </code></pre>
+      </section><!-- title -->
+    </section><!-- titles -->
+
+    <section id=textAbbreviation>
+      <header>
+        <h1 class="string">Abbreviation</h1>
+        <code>"abbreviation"</code>
+      </header>
+      <p><strong class=optional>Optional</strong> A human-readable abbreviation for the text, containing only letters a-z, A-Z, and numbers 0-9 (no spaces allowed).</p>
+      <pre><code>
+"abbreviation" : "A25"
+      </code></pre>
+    </section><!-- abbreviation -->
+
+    <section id=discourseType>
+      <header>
+        <h1 class="string">Discourse Type</h1>
+        <code>"discourseType"</code>
+      </header>
+      <p><strong class=optional>Optional</strong> The type of discourse event, e.g. monologue, dialogue, or song.</p>
+      <pre><code>
+"discourseType" : "monologue"
+      </code></pre>
+    </section><!-- textType -->
+
+    <section id=genre>
+      <header>
+        <h1 class="string">Genre</h1>
+        <code>"genre"</code>
+      </header>
+      <p><strong class=optional>Optional</strong> The genre of the text, e.g. folktale, personal narrative, or expository.</p>
+      <pre><code>
+"genre" : "folktale"
+      </code></pre>
+    </section><!-- genre -->
+
+    <section id=participants>
+      <header>
+        <h1 class="array">Participants</h1>
+        <code>"participants"</code>
+      </header>
+      <p><strong class=required>Required</strong> A collection of all the individuals who contributed to this text in some way, for example through recording, digitization, analysis, transcription, or editing. This field is required, even if an empty array.</p>
+      <pre><code>
+"participants" : [
+  {
+    "name" : "Benjamin Paul",
+    "abbreviation" : "A",
+    "role" : "speaker",
+    "person" : { person }
+  },
+  {
+    "name" : "Morris Swadesh",
+    "abbreviation" : "MS",
+    "role" : "researcher",
+    "person" : 3
+  }
+]
+      </code></pre>
+
+      <section id=participant>
+        <header>
+          <h1 class="object">Participant</h1>
+          <code>"participant"</code>
+        </header>
+        <p><strong class=optional>Optional</strong> A <code>Participant</code> is anyone who contributed to the creation or analysis of the text, and the role they played (e.g. recording, transcribing, speaking, etc.). A <code>Participant</code> is not just a <code>Person</code> object (see the DLX <a href="../spec/person">Person</a> specification for that), but rather it is an object which specifies the particular role a person played in producing this text. It is a pairing of person and role.</p>
+        <p>The <code>"person"</code> field references a <code>Person</code> object. This may be either a valid <code>Person</code> object, following the <a href="../spec/person">Person</a> specification, or the ID of a <code>Person</code> object in another file accompanying the text.
+        <pre><code>
+{
+  "name" : "Benjamin Paul",
+  "abbreviation" : "A",
+  "role" : "speaker",
+  "person" : { person } OR 12
+}
+        </code></pre>
+
+        <section id=participantName>
+          <header>
+            <h1 class="string">Name</h1>
+            <code>"name"</code>
+          </header>
+          <p><strong class=required>Required</strong> The name of this participant. If a pseudonym is used for this participant, that pseudonym should be used here instead of the participant’s real name.</p>
+          <pre><code>
+"name" : "Benjamin Paul"
+          </code></pre>
+        </section><!-- participant name -->
+
+        <section id=participantAbbreviation>
+          <header>
+            <h1 class="string">Abbreviation</h1>
+            <code>"abbreviation"</code>
+          </header>
+          <p><strong class=optional>Optional</strong> The participant <dfn>abbreviation</dfn> is a human-readable key for referring to this person, usually but not always consisting of the person’s initials. Other schemas might be <code>"A"</code> and <code>"B"</code> respectively for speakers A and B, for example. The participant abbreviation may contain only letters a-z, A-Z, and numbers 0-9 (no spaces allowed).</p>
+          <pre><code>
+"abbreviation" : "A"
+          </code></pre>
+        </section><!-- participant abbreviation -->
+
+        <section id=role>
+          <header>
+            <h1 class="string">Role</h1>
+            <code>"role"</code>
+          </header>
+          <p><strong class=required>Required</strong> The role that this person played in the creation or curation of this text, e.g. speaker, translator, transcriber, rehearer, editor, checker, glosser, researcher, etc.</p>
+          <pre><code>
+"role" : "speaker"
+          </code></pre>
+        </section><!-- participant role -->
+
+        <section id=participantPerson>
+          <header>
+            <h1 class="string">person</h1>
+            <code>"person"</code>
+          </header>
+          <p><strong class=required>Required</strong> The <code>"person"</code> field references a <code>Person</code> object. This may be either a valid <code>Person</code> object, following the <a href="../spec/person">Person</a> specification, or the ID of a <code>Person</code> object in another file accompanying the text.</p>
+          <pre><code>
+"person" : 4 OR { person }
+          </code></pre>
+        </section><!--  person -->
+      </section><!-- participant -->
+    </section><!-- participants -->
+
+    <section id=phrases>
+      <header>
+        <h1 class="array">Phrases</h1>
+        <code>"phrases"</code>
+      </header>
+      <p><strong class=required>Required</strong> A collection of all the <code>Phrases</code> in the <code>Text</code>.</p>
+      <pre><code>
+"phrases": [ { phrase 1 }, { phrase 2 }, ... ]
+      </code></pre>
+      <section id=phrase>
+
+        <header>
+          <h1 class="object">Phrase</h1>
+        </header>
+        <p><strong class=required>Required</strong> A segmentation of a <code>Text</code>. This standard imposes no requirements regarding how the linguist should implement this segmentation—linguists may choose to use Intonation Units, Turns, Sentences, or any other appropriate subdivision.</p>
+        <pre><code>
+{
+  "dataType" : "phrase",
+
+  "transcriptions" : {
+    "SwadPhonemic" : "kunugu wey pu·p panš naʔank hi čuyiʔi",
+    "ModPhonemic" : "kunugu wey puup panx naqank hi cuyiqi",
+    "APAPhonemic" : "kunukʼu wey puːp panš naʔank hi čuyiʔi",
+    "ModPractical" : "Kunugu wey puup panx naqank hi cuyiqi.",
+    "SwadTranscript" : "kunuguˊ we pu·pˊ panš naʔankˊ hi čuyiʔiˊ."
+  },
+
+  "translations" : {
+    "SwadFree" : "The rabbit went to some people.",
+    "Literal" : "It is said the rabbit went to the peopleʼs place."
+  }
+}
+        </code></pre>
+
+        <section id=dataType>
+          <header>
+            <h1 class="string">Data Type</h1>
+            <code>"dataType"</code>
+          </header>
+          <p><strong class=required>Required</strong> The type of linguistic data. This property is used in Javascript to determine the type of data being processed. For a phrase, this must be <code>"phrase"</code>.</p>
+          <pre><code>
+"dataType" : "phrase"
+          </code></pre>
+        </section><!-- dataType -->
+
+        <section id=speaker>
+
+          <header>
+            <h1 class="string">Speaker</h1>
+            <code>"speaker"</code>
+          </header>
+          <p><strong class=optional>Optional</strong> The <code>Person</code> who spoke or otherwise created the phrase. Must be one of either a) the name of one of the participants listed in the <code>"participant"</code> field of the <code>text</code> object, b) the name of a <code>Participant</code> object in an accompanying people file, c) the ID of a <code>Participant</code> object found in an accompanying people file.</p>
+          <pre><code>
+"speaker": "Benjamin Paul" OR 2
+          </code></pre>
+        </section><!-- #speaker -->
+
+        <section id=transcriptions>
+          <header>
+            <h1 class="object">Transcriptions</h1>
+            <code>"transcriptions"</code>
+          </header>
+          <p><strong class=required>Required</strong> A set of one or more <code>Transcription</code>s for the <code>Phrase</code>.</p>
+          <pre><code>
+"transcriptions" : {
+  "SwadPhonemic" : "kunugu wey pu·p panš naʔank hi čuyiʔi",
+  "ModPhonemic" : "kunugu wey puup panx naqank hi cuyiqi",
+  "APAPhonemic" : "kunukʼu wey puːp panš naʔank hi čuyiʔi"
+}
+          </code></pre>
+
+          <section id=transcription>
+            <header>
+              <h1 class="string">Transcription</h1>
+              <code>"[name of orthography]"</code>
+            </header>
+            <p><strong class=required>Required</strong> A phonemic representation of the phrase in an orthography which is either in IPA or can be unambiguously mapped to IPA.</p>
+            <pre><code>
+"APAPhonemic" : "kunukʼu wey puːp panš naʔank hi čuyiʔi"
+            </code></pre>
+          </section><!-- #transcription -->
+        </section><!-- #transcriptions -->
+
+        <section id=words>
+          <header>
+            <h1 class="array">Words</h1>
+            <code>"words"</code>
+          </header>
+          <p><strong class=optional>optional</strong> An array of words.</p>
+          <pre><code>
+"words": [
+  { word 1 }, { word 2 }, { word 3 }
+]
+          </code></pre>
+
+          <section id=word>
+            <header>
+              <h1 class="object">Word</h1>
+            </header>
+            <p><strong class=optional>Optional</strong> Word </p>
+            <pre><code>
+{
+  dataType : "word",
+  token : "kunugu",
+  gloss : "something"
+}
+            </code></pre>
+
+            <section id=dataType>
+              <header>
+                <h1 class="string">Data Type</h1>
+                <code>"dataType"</code>
+              </header>
+              <p><strong class=required>Required</strong> The type of linguistic data. This property is used in Javascript to determine the type of data being processed. For a word, this must be <code>"word"</code>.</p>
+              <pre><code>
+"dataType" : "word"
+              </code></pre>
+            </section><!-- dataType -->
+
+          </section><!-- #word -->
+
+        </section><!-- #words -->
+
+      </section><!-- #phrase -->
+
+    </section><!-- #phrases -->
+
+  </section><!-- #text -->
+
+  <section id=language>
+    <header>
+      <h1 class=object id="language">Language</h1>
+    </header>
+    <p><strong class=required>required</strong>
+      All language-specific information, including language codes, language names, orthographies, and phonemic inventories.
+    </p>
+    <div class=examples>
+
+      <pre code=ctm><code>
+{
+   "code": "ctm",
+   "name": "Chitimacha"
+   "inventory": [
+   ],
+   "orthographies": [
+     "transliterations": [
+
+     ]
+   ],
+}
+      </code></pre>
+
+    </div>
+    <section id="code">
+      <header>
+        <h1 class="string">Language code</h1>
+        <code>"id"</code>
+      </header>
+      <p>
+        <strong class="required">Required</strong> A language code which identifies the language being documented.
+      </p>
+      <pre><code>
+"id" : 25
+      </code></pre>
+    </section>
+
+  </section><!-- #language -->
+
+</section><!-- #spec -->
+
+</main>
+
+
+<footer>
+<ul>
+<li><a href=https://github.com/digitallinguistics/digitallinguistics.github.io>Github</a>
+<li>A Wugbot Production.
+<li>LICENSE HERE <mark>todo</mark>
+</ul>
+
+</footer>
+
+<script>
+
+var sections = [].slice.call(document.body.querySelectorAll('main > section  section'));
+
+sections.forEach(s => {
+  var li = document.createElement('li');
+  var html = '<a href=#' + s.id + '>' + s.id + '</a>';
+  li.insertAdjacentHTML('afterbegin', html);
+  document.querySelector('#toc').appendChild(li);
+})
+
+</script>
